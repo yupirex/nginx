@@ -1,0 +1,12 @@
+version: '3'
+services:
+  proxy:
+    image: nginx
+    ports:
+      - 1180:80
+      - 1181:1181
+      - 1182:1182 
+    volumes:
+      - ./includes:/etc/nginx/includes
+      - ./backend-not-found.html:/var/www/html/backend-not-found.html
+      - ./conf.d:/etc/nginx/conf.d
